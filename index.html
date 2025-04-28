@@ -1,21 +1,34 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meme-generator</title>
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8">
+  <title>Meme Generator</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
-    <header>
-        <h1>MEME GENERATOR</h1>
-    </header>
-    
-    <section class="editor">
-        <canvas width="200px" height="200px"></canvas>
-    </section>
-    <section class="meme-gallery"></section>
+<body onload="onInit()" >
 
-    
+<h1>Meme Generator</h1>
+
+<section class="gallery">
+</section>
+
+<section class="editor">
+<canvas class="meme-canvas" width="500" height="500"></canvas>
+
+<input type="text" id="topText" placeholder="Top Text">
+<input type="text" id="bottomText" placeholder="Bottom Text">
+
+<button id="btn downloadBtn" onclick="onDownloadCanvas()">Download Meme</button>
+<button id="btn clearBtn">Clear</button>
+</section>
+
+
 </body>
+<script src="js/controller/gallery.js"></script>
+<script src="js/services/memeService.js"></script>
+<script src="js/controller/memeController.js"></script>
+<script src="js/services/util.service.js"></script>
+<script src="js/main.js"></script>
 </html>
