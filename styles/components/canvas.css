@@ -1,3 +1,9 @@
-canvas{
+.editor{
     background-color: antiquewhite;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+canvas{
+    background-color: beige;
 }

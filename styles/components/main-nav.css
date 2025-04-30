@@ -1,0 +1,23 @@
+
+.main-nav a {
+    display: grid;
+    place-items: center;
+    height: 8.125rem;
+    width: 8.125rem;
+    font-family: lato-bold;
+    color: black;
+    text-decoration: none;
+    grid-row: 1;
+
+    transition: 0.4s box-shadow;
+}
+
+.main-nav a.active {
+    color: var(--clr-brand-base);
+    box-shadow: inset 0px -6px 0 var(--clr-brand-base);
+    cursor: default;
+}
+
+.main-nav a:hover {
+    box-shadow: inset 0px -6px 0 var(--clr-brand-base);
+}

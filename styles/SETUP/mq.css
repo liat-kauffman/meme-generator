@@ -1,0 +1,131 @@
+/* medium */
+
+@media screen and (width < 920px) {
+
+
+    .main-nav {
+        grid-template-rows: 0fr;
+        align-items: end;
+        align-content: end;
+        position: fixed;
+        overflow: hidden;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        height: auto;
+
+        color: white;
+        background-color: var(--clr-primary-base);
+
+        transition: grid-template-rows 1s;
+    }
+
+
+    html {
+        font-size: 16px;
+    }
+
+    /* .main-layout {
+        grid-template-columns:
+            minmax(20px, 1fr) minmax(auto, 920px) minmax(20px, 1fr);
+    } */
+
+    html {
+        font-size: 16px;
+    }
+
+    .main-layout {
+        grid-template-columns:
+            minmax(20px, 1fr) minmax(auto, 880px) minmax(20px, 1fr);
+    }
+
+
+    .burger {
+        display: block;
+    }
+
+    body.menu-open .main-nav {
+        grid-template-rows: 1fr;
+    }
+
+
+    .main-nav>ul {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        justify-content: end;
+    }
+
+    .main-nav>ul>li {
+        border-bottom: 1px solid #000;
+    }
+
+    .main-nav>ul>li>a {
+        width: 100%;
+        height: auto;
+        padding-block: 1em;
+    }
+
+    body.menu-open .main-nav {
+        translate: 0;
+    }
+
+    .logo{
+        margin-bottom: 80px;
+        margin-top: 60px;
+    }
+
+
+    /* body.menu-open .main-nav {
+        grid-template-rows: 1fr;
+    }
+
+
+    .main-nav>ul {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        justify-content: end;
+    }
+
+    .main-nav>ul>li {
+        border-bottom: 1px solid #000;
+    }
+
+    .main-nav>ul>li>a {
+        width: 100%;
+        height: auto;
+        padding-block: 1em;
+    }
+
+    body.menu-open .main-nav {
+        translate: 0;
+    } */
+
+
+}
+
+/* large */
+
+@media screen and (width > 920px) {
+    .main-layout {
+        display: grid;
+        grid-template-columns:
+            minmax(20px, 1fr) minmax(auto, 1200px) minmax(20px, 1fr);
+    }
+
+    .main-header{
+        grid-column: 2;
+    }
+    .gallery{
+        grid-column: 2;
+    }
+    
+}
+
+
+
+
+
+
+

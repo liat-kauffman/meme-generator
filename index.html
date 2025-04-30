@@ -6,11 +6,28 @@
   <meta charset="UTF-8">
   <title>Meme Generator</title>
   <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/components/gallery.css">
+ 
 </head>
-<body onload="onInit()" >
+<body onload="onInit()" class="main-layout" >
+    <div class="main-screen" onclick="onClickMenue()"></div>
 
-<h1>Meme Generator</h1>
+    <header class="main-header main-layout full">
+        <div class="header-content flex space-between">
+            
+            <img src="img/icons/LOGO.png" alt="" class="logo" onclick="onGallery()">
+            
+            <nav class="main-nav menu-open">
+                <ul class="flex clean-list clean-deco">
+                    <li><a href="#" onclick="onGallery()">gallery</a></li>
+                    <li><a href="#" onclick="onEditor()">editor</a></li>
+                    <li><a href="#">about</a></li>
+                </ul>
+            </nav>
+            <div class="burger hidden" onclick="onClickMenu()">
+                <img src="img/icons/burger.png" alt="burger">
+            </div>
+        </div>
+    </header>
 
 <section class="gallery">
 </section>

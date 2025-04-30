@@ -17,3 +17,18 @@ function onImgSelect(imgId) {
     document.querySelector('.editor').classList.remove('hidden')
     renderMeme()
 }
+
+// on gallery button click
+
+function onGallery(){
+    document.querySelector('.editor').classList.add('hidden')
+    document.querySelector('.gallery').classList.remove('hidden')
+}
+
+// on editor button click
+
+function onEditor(){
+    document.querySelector('.gallery').classList.add('hidden')
+    document.querySelector('.editor').classList.remove('hidden')
+}
+

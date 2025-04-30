@@ -1,3 +1,31 @@
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.clean-deco{
+    text-decoration: none;
+}
+.flex {
+    display: flex;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    display: flex;
+    align-items: center;
+}
+
 .hidden{
     display: none;
+} 
+
+/* layout helpers */
+
+
+.border-content {
+    border-inline: solid 1px var(--clr-primary-base-4);
 }
