@@ -8,24 +8,30 @@
   <link rel="stylesheet" href="styles/style.css">
  
 </head>
-<body onload="onInit()" class="main-layout" >
-    <div class="main-screen" onclick="onClickMenue()"></div>
+<body onload="onInit()" class="main-layout"  >
+    <div class="main-screen" onclick="onClickMenu()"></div>
 
     <header class="main-header main-layout full">
         <div class="header-content flex space-between">
             
             <img src="img/icons/LOGO.png" alt="" class="logo" onclick="onGallery()">
             
-            <nav class="main-nav menu-open">
+            <nav class="main-nav">
                 <ul class="flex clean-list clean-deco">
                     <li><a href="#" onclick="onGallery()">gallery</a></li>
                     <li><a href="#" onclick="onEditor()">editor</a></li>
                     <li><a href="#">about</a></li>
                 </ul>
             </nav>
-            <div class="burger hidden" onclick="onClickMenu()">
-                <img src="img/icons/burger.png" alt="burger">
-            </div>
+            <nav class="burger" onclick="onClickMenu()">
+                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="black" stroke-width="2" stroke-linecap="round" />
+                </svg>
+    
+                <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24" style="display: none;">
+                    <path d="M6 6l12 12M6 18L18 6" stroke="black" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </nav>
         </div>
     </header>
 
@@ -33,13 +39,48 @@
 </section>
 
 <section class="editor hidden">
-<canvas class="meme-canvas" width="500" height="500"></canvas>
+    
+        <input type="color" value="#000000" class="color-picker" oninput="onSetColor(this.value)" />
+        
+        <select onchange="onSetFontSize(this.value)">
+            <option>1</option>
+            <option>2</option>
+            <option selected>5</option>
+            <option>10</option>
+            <option>20</option>
+        </select>
+    
+        <button onclick="onClearCanvas()">Clear</button>
+    </div>
+    <canvas class="meme-canvas" width="500" height="500"></canvas>
 
-<input type="text" id="topText" placeholder="Top Text">
-<input type="text" id="bottomText" placeholder="Bottom Text">
+        <input
+            type="text"
+            id="txt-line"
+            oninput="onInputTxt(this.value)"/>
+        
 
-<button id="btn downloadBtn" onclick="onDownloadCanvas()">Download Meme</button>
-<button id="btn clearBtn">Clear</button>
+    
+        <div class="m-10">
+            <button class="btn"><a href="#" onclick="onDownloadCanvas(this)" download="file-name">Download</a></button> |
+            <button class="btn" onclick="onSave()">Save Picture</button>
+        </div>
+        
+        <div>
+            <form action="" method="POST" enctype="multipart/form-data" onsubmit="onUploadImg(event)">
+                <input name="img" id="imgData" type="hidden" />
+                <button class="btn" type="submit">Upload to Cloud</button>
+            </form>
+        </div>
+    
+        <div class="share-container"></div>
+    
+        <hr />
+
+
+        <h3>Saved Pictures</h3>
+
+        <section class="pic-list"></section>
 </section>
 
 
@@ -48,5 +89,7 @@
 <script src="js/services/memeService.js"></script>
 <script src="js/controller/memeController.js"></script>
 <script src="js/services/util.service.js"></script>
+<script src="js/services/pic.service.js"></script>
+<script src="js/services/upload.service.js"></script>
 <script src="js/main.js"></script>
 </html>

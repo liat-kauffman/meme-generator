@@ -7,7 +7,6 @@
     font-family: lato-bold;
     color: black;
     text-decoration: none;
-    grid-row: 1;
 
     transition: 0.4s box-shadow;
 }

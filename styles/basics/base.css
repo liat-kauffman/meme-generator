@@ -1,3 +1,8 @@
 .hidden{
     display: none;
 }
+
+body{
+    background-image:
+    linear-gradient(rgba(0, 0, 255, 0.5), rgba(0, 166, 255, 0.5));
+}
