@@ -5,14 +5,13 @@ function renderMeme() {
     const meme = getMeme()
     const imgData = getImgById(meme.selectedImgId)
     const img = new Image()
-    img.src = imgData.url // Make sure imgData has a 'url' field
+    img.src = imgData.url 
 
     img.onload = () => {
-        // Clear the canvas and draw the image
+
         gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
-        // Draw each line of text
         meme.lines.forEach(line => drawTextLine(line))
     }
 }
@@ -47,77 +46,75 @@ function onSwitchLine() {
 
 
 function drawTextLine(line) {
-    const lineHeight = line.size || 40; // Default line height (font size)
-    const maxWidth = gElCanvas.width - 40; // Max width considering padding
-    let x = line.x || gElCanvas.width / 2; // Default to center if no x is specified
-    let y = line.y || lineHeight; // Start at the top of the canvas or specified y value
+    const lineHeight = line.size || 40
+    const maxWidth = gElCanvas.width - 40
+    let x = line.x || gElCanvas.width / 2
+    let y = line.y || lineHeight
 
-    // Set font style for text drawing
+
     gCtx.font = `${line.size || 40}px ${line.font || 'Impact'}`;
-    gCtx.textAlign = line.align || 'center'; // Alignment: 'left', 'center', 'right'
-    gCtx.lineWidth = 2;
-    gCtx.strokeStyle = 'black'; // Stroke for readability
-    gCtx.fillStyle = line.color || 'white'; // Fill color for text
+    gCtx.textAlign = line.align || 'center'
+    gCtx.lineWidth = 2
+    gCtx.strokeStyle = 'black'
+    gCtx.fillStyle = line.color || 'white'
 
-    const textLines = line.txt.split('\n'); // Split the text into multiple lines if needed
+    const textLines = line.txt.split('\n')
 
-    // Loop through each line of text
+
     textLines.forEach(text => {
-        const wrappedLines = wrapText(text, maxWidth); // Wrap the text if necessary
+        const wrappedLines = wrapText(text, maxWidth); 
 
-        // Draw each wrapped line
+
         wrappedLines.forEach(wrappedLine => {
-            // Draw the text (with stroke for better visibility)
-            drawText(wrappedLine, x, y, line);
 
-            // Highlight if the line is selected
+            drawText(wrappedLine, x, y, line)
+
             if (line.isSelected) {
                 highlightSelectedText(x, y, wrappedLine, lineHeight, line);
             }
 
-            // Move the y position for the next line of text
+           
             y += lineHeight;
         });
     });
 }
 
-// Helper function to measure if the text fits within the canvas width
+
 function textFits(text, maxWidth) {
     const textWidth = gCtx.measureText(text).width;
-    return textWidth <= maxWidth;
+    return textWidth <= maxWidth
 }
 
-// Helper function to wrap text based on the available width
+
 function wrapText(text, maxWidth) {
-    const words = text.split(' ');
+    const words = text.split(' ')
     const lines = [];
-    let currentLine = '';
+    let currentLine = ''
 
     words.forEach(word => {
         const testLine = currentLine ? `${currentLine} ${word}` : word;
         const testWidth = gCtx.measureText(testLine).width;
 
-        // If the line fits, add the word
+
         if (testWidth <= maxWidth) {
-            currentLine = testLine;
+            currentLine = testLine
         } else {
-            // If the line doesn't fit, push the current line and start a new one
+
             if (currentLine) {
-                lines.push(currentLine);
+                lines.push(currentLine)
             }
             currentLine = word;
         }
     });
 
-    // Add the last line if there's any remaining text
     if (currentLine) {
-        lines.push(currentLine);
+        lines.push(currentLine)
     }
 
     return lines;
 }
 
-// Function to actually draw the text
+
 function drawText(wrappedLine, x, y, line) {
 
     if (line.align === 'left') {

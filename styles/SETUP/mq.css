@@ -34,16 +34,19 @@
         flex-direction: column;
         min-height: 0;
         justify-content: end;
+        list-style: none;
     }
 
     .main-nav>ul>li {
         border-bottom: 1px solid #000;
+        list-style: none;
     }
 
     .main-nav>ul>li>a {
         width: 100%;
         height: auto;
         padding-block: 1em;
+        text-decoration: none;
     }
 
 
@@ -76,6 +79,11 @@
     .main-layout {
         grid-template-columns:
             minmax(20px, 1fr) minmax(auto, 880px) minmax(20px, 1fr);
+    }
+
+    .gallery img{
+        width: 25vw;
+        height: auto;
     }
 
 }
