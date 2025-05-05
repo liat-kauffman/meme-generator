@@ -17,22 +17,6 @@ function onClickMenu() {
     closeIcon.style.display = isOpen ? 'inline' : 'none'
 }
 
-function onUploadImg(ev) {
-    ev.preventDefault()
-    const canvasData = gElCanvas.toDataURL('image/jpeg')
-
-    // After a succesful upload, allow the user to share on Facebook
-    function onSuccess(uploadedImgUrl) {
-        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
-        document.querySelector('.share-container').innerHTML = `
-        <a href="${uploadedImgUrl}">Uploaded pic</a>
-        <p>Picture url: ${uploadedImgUrl}</p>
-        <button class="btn-facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}')">
-           Share on Facebook  
-        </button>`
-    }
-    uploadImg(canvasData, onSuccess)
-}
 
 
 function onClearCanvas() {

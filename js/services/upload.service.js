@@ -32,7 +32,6 @@ function onUploadImg(ev) {
         const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
         document.querySelector('.share-container').innerHTML = `
         <a href="${uploadedImgUrl}">Uploaded pic</a>
-        <p>Picture url: ${uploadedImgUrl}</p>
         <button class="btn-facebook btn" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}')">
            Share on Facebook  
         </button>`

@@ -1,19 +1,26 @@
 .btn {
-    border-radius: 2em;
+    border-radius: 10px;
     padding: 4px;
-    background-color: rgb(225, 188, 243);
+    max-width: max-content;
+    background-color: rgb(60, 148, 92);
     border-color: antiquewhite;
     cursor: pointer;
 }
 .btn-facebook{
     border-color: antiquewhite;
     border-radius: 2em;
+    max-width: max-content;
     padding: 4px;
-    background-color: rgb(201, 152, 210);
+    background-color: rgb(60, 148, 92);
     cursor: pointer;
 }
 
 .close-btn{
    max-width: 30px;
    font-size: 10px;
+}
+
+.color-picker{
+    max-width: 40px;
+    
 }

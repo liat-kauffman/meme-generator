@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="styles/components/canvas.css">
   <link rel="stylesheet" href="styles/components/main-nav.css">
   <link rel="stylesheet" href="styles/components/main-screen.css">
+  <link rel="stylesheet" href="styles/components/share-container.css">
   <link rel="stylesheet" href="styles/components/header.css">
   <link rel="stylesheet" href="styles/components/burger.css">
   <link rel="stylesheet" href="styles/components/logo.css">
@@ -45,55 +46,59 @@
         </div>
     </header>
 
-<section class="gallery">
-</section>
+    <section class="gallery">
+    </section>
 
-<section class="editor hidden">
-    
-        <input type="color" value="#000000" class="color-picker" oninput="onSetColor(this.value)" />
+    <section class="hidden editor ">
+        <section class="editor-layout">
+        <canvas class="meme-canvas" width="600" height="600"></canvas>
         
-        <select onchange="onSetFontSize(this.value)">
-            <option>1</option>
-            <option>2</option>
-            <option selected>5</option>
-            <option>10</option>
-            <option>20</option>
-        </select>
-    
-        <button onclick="onClearCanvas()">Clear</button>
-    </div>
-    <canvas class="meme-canvas" width="500" height="500"></canvas>
-
-        <input
+        <section class="text-edit">
+            <input
             type="text"
             id="txt-line"
+            placeholder="your text here..."
             oninput="onInputTxt(this.value)"/>
+            
+            
+            <select onchange="onSetFontSize(this.value)">
+                <option>1</option>
+                <option>2</option>
+                <option selected>5</option>
+                <option>10</option>
+                <option>20</option>
+            </select>
+            <input type="color" value="#000000" class="color-picker btn" oninput="onSetColor(this.value)" />
+            
+            <button class="btn" onclick="onClearCanvas()">Clear</button>
+            
+            
+            <hr />
+            
+        </section>
         
+        <section class="upload-container">
+            <div class="m-10">
+                <button class="btn"><a href="#" onclick="onDownloadCanvas(this)" download="file-name">Download</a></button> |
+                <button class="btn" onclick="onSave()">Save Picture</button>
+            </div>
+            
+            <div>
+                <form action="" method="POST" enctype="multipart/form-data" onsubmit="onUploadImg(event)">
+                    <input name="img" id="imgData" type="hidden" />
+                    <button class="btn" type="submit">Upload to Cloud</button>
+                </form>
+            </div>
+            
+            <div class="share-container"></div>
 
-    
-        <div class="m-10">
-            <button class="btn"><a href="#" onclick="onDownloadCanvas(this)" download="file-name">Download</a></button> |
-            <button class="btn" onclick="onSave()">Save Picture</button>
-        </div>
-        
-        <div>
-            <form action="" method="POST" enctype="multipart/form-data" onsubmit="onUploadImg(event)">
-                <input name="img" id="imgData" type="hidden" />
-                <button class="btn" type="submit">Upload to Cloud</button>
-            </form>
-        </div>
-    
-        <div class="share-container"></div>
-    
-        <hr />
-
-
+        </section>
+        <div class="saved-pics">
         <h3>Saved Pictures</h3>
-
         <section class="pic-list"></section>
-</section>
-
-
+        </div>
+        </section>
+    </section>
 </body>
 <script src="js/controller/gallery.js"></script>
 <script src="js/services/memeService.js"></script>

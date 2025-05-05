@@ -1,8 +1,71 @@
 .hidden{
     display: none;
 }
+  
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-body{
-    background-image:
-    linear-gradient(rgba(0, 0, 255, 0.5), rgba(0, 166, 255, 0.5));
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    background-color: rgb(209, 231, 222);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+    margin: 0 0 1em;
+    text-wrap: balance;
+}
+
+p {
+    margin: 0 0 1em;
+    text-wrap: balance;
+}
+
+img,
+video,
+canvas,
+picture,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    text-decoration-skip-ink: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+    font: inherit;
+}
+
+.break-url {
+    word-break:break-all;
+    max-width: 200px; /* or any width you want */
 }

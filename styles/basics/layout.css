@@ -1,0 +1,24 @@
+
+
+.text-edit{
+    display: flex;
+    flex-direction: column;
+    
+    max-width: 300px;
+}
+
+.editor-layout {
+    display: grid;
+}
+
+
+.text-edit {
+    display: flex;
+    gap: 10px;
+}
+
+.editor-layout .text-edit {
+    display: flex;
+    flex-direction: column;
+}
+
