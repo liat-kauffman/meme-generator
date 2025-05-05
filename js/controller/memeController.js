@@ -92,7 +92,7 @@ function wrapText(text, maxWidth) {
     let currentLine = ''
 
     words.forEach(word => {
-        const testLine = currentLine ? `${currentLine} ${word}` : word;
+        const testLine = currentLine ? `${currentLine} ${word}` : word
         const testWidth = gCtx.measureText(testLine).width;
 
 
