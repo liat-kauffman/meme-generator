@@ -1,6 +1,6 @@
 /* medium */
 
-@media screen and (width < 920px) {
+@media screen and (min-width: 680px) {
 
     .burger{
         z-index: 1;
@@ -86,6 +86,7 @@
         grid-template-columns:
             20px 1fr 1fr 20px;
         column-gap:40px;
+        row-gap: 40px;
         grid-template-rows:auto auto auto;
     }   
 
@@ -152,7 +153,9 @@
         column-gap:40px;
         grid-template-rows:auto auto auto;
     } 
-    
+    .text-edit{
+        max-width: 300px;
+    }
     .editor{
         grid-template-rows: minmax(400px,500px) minmax(60px,100px) auto;
     }
@@ -179,16 +182,15 @@
 }
 
 
-@media screen and (width < 640px) {
+@media screen and (max-width: 680px) {
+
+
     .main-layout {
         grid-template-columns:
             minmax(20px, 1fr) minmax(auto, 500px) minmax(20px, 1fr);
     }
 
-    .editor-layout{
-        display: flex;
-        flex-direction: column;
-    }
+   
 
     .pic-list img{
         max-width: 250px;
@@ -198,6 +200,93 @@
         flex-wrap: wrap;
         gap: 15px;
         grid-row: 3;
+    }
+
+
+    .burger{
+        z-index: 1;
+    }
+
+    .main-nav {
+        position: fixed;
+       
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: rgb(171, 170, 253) ;
+        padding: 2rem;
+        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+  
+    body.menu-open .main-nav {
+        transform: translateX(0);
+    }
+    
+
+
+    .main-nav>ul {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        justify-content: end;
+        list-style: none;
+    }
+
+    .main-nav>ul>li {
+        border-bottom: 1px solid #000;
+        list-style: none;
+    }
+
+    .main-nav>ul>li>a {
+        width: 100%;
+        height: auto;
+        padding-block: 1em;
+        text-decoration: none;
+    }
+
+
+    .logo{
+        margin-bottom: 80px;
+        position: relative;
+        font-size: 2em;
+    }
+
+    .main-nav>ul {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        justify-content: end;
+    }
+
+    .main-nav>ul>li {
+        border-bottom: 1px solid #000;
+    }
+
+    .main-nav>ul>li>a {
+        width: 100%;
+        height: auto;
+        padding-block: 1em;
+    }
+
+    .gallery img {
+        min-width: 250px;
+        height: max-content;
+    }
+    .editor-layout{
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        
+        align-items: center;
+    }
+    .text-edit{
+        max-width: 500px;
     }
 
 

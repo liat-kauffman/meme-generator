@@ -29,7 +29,7 @@ function setCurrMeme(imgId) {
         lines: [
             {
                 txt: 'hello',
-                size: 30,
+                size: 40,
                 color: 'white',
                 font: 'Impact',
                 align: 'center',
