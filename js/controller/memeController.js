@@ -130,3 +130,8 @@ function drawText(wrappedLine, x, y, line) {
 }
 
 
+document.getElementById('colorPicker').addEventListener('input', (ev) => {
+    gCurrMeme.lines[gCurrMeme.selectedLineIdx].color = ev.target.value
+    renderCanvas()
+  })
+  
